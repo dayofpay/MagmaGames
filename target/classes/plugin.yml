@@ -1,0 +1,19 @@
+name: MagmaGames
+version: 1.0
+main: org.vdevs.plugins.magmagames.MagmaGames
+api-version: 1.8
+author: VDEVS
+commands:
+  hostgame:
+    description: Стартира ръчно евент
+    usage: /hostgame
+    permission: magmagames.hostgame
+  activechests:
+    description: Показва активните treasure chest-и
+    permission: magmagames.admin
+  treasurecompass:
+    description: Получи компас, сочещ към съкровището
+    usage: /treasurecompass
+    permission: magma.treasurecompass
+softdepend:
+  - DecentHolograms

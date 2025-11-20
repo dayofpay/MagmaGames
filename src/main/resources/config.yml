@@ -1,0 +1,152 @@
+# ======================================================
+#   &4&lᴍᴀɢᴍᴀ&e&lᴄʀᴀꜰᴛ &8| &6&lEvents Configuration
+#   &7Създадено специално за MagmaCraft Network
+# ======================================================
+
+# &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯&8[ &6&lВКЛЮЧЕНИ ЕВЕНТИ &8]&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯
+events:
+  mine_event: true
+  kill_event: true
+  math_event: true
+  quiz_event: true
+  treasure_event: true
+
+# &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯&8[ &6&lГЛОБАЛНИ СЪОБЩЕНИЯ &8]&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯
+messages:
+  prefix: "&8[&cMagma&6Events&8]&7 "
+  line: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+  start: "&a&l✦ &e%event_name% &aзапочна!"
+  stop: "&c&l✦ &e%event_name% &cприключи!"
+  pre_start: "&6&l✦ &e%event_name% ще започне след &6%seconds%&es!"
+  already_active: "&c&l✦ &e%event_name% &cвече е активен!"
+  not_active: "&c&l✦ &e%event_name% &cне е активен!"
+  player_won: "&6&l✦ &a%player% &eспечели &6%event_name%&e!"
+  no_answer: "&c&l✦ &cНикой не успя да отговори навреме!"
+  correct_answer: "&a&l✦ &6%player% &aотговори правилно и спечели!"
+  countdown_title: "&6%event_name%"
+  countdown_subtitle: "&eЗапочва след &6%seconds%&es"
+
+# &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯&8[ &2&lMINE EVENT &8]&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯
+mine_event:
+  enabled: true
+  interval-seconds: 1800
+  duration-seconds: 300
+
+  broadcast:
+    start: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&a&l✦ &2&lMINE EVENT &aзапочна!\n&7Чупи блокове, за да спечелиш награди!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    end: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&c&l✦ &2&lMINE EVENT &cприключи!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+
+  blocks:
+    - "minecraft:stone"
+    - "minecraft:cobblestone"
+    - "minecraft:iron_ore"
+
+  rewards:
+    - "eco give %player% 10"
+    - "give %player% diamond 1"
+
+  pre-commands:
+    '45':
+      - "broadcast &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+      - "broadcast &6&l✦ &eMine Event ще започне след &c45 секунди&e!"
+      - "broadcast &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    '10':
+      - "broadcast &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+      - "broadcast &6&l✦ &eMine Event започва след &c10 секунди&e!"
+      - "broadcast &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+      - "playsound random.orb @a"
+
+# &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯&8[ &4&lKILL EVENT &8]&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯
+kill_event:
+  enabled: true
+  interval-seconds: 3600
+  duration-seconds: 600
+  target: "players"
+  goal: 10
+
+  broadcast:
+    start: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&a&l✦ &4&lKILL EVENT &aзапочна!\n&7Направи &c10 убийства &7за да спечелиш!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    progress: "&8▏ &c%player% &7вече има &e%kills% &7убийства!"
+    end: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&c&l✦ &4&lKILL EVENT &cприключи!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    winner: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&6&l✦ &c%player% &eспечели &4&lKILL EVENT&e!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+
+  rewards:
+    - "crate givekey %player% battle 1"
+    - "eco give %player% 100"
+
+# &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯&8[ &b&lMATH EVENT &8]&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯
+math_event:
+  enabled: true
+  interval-seconds: 1800
+  duration-seconds: 30
+
+  broadcast:
+    start: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&a&l✦ &b&lMATH EVENT &aзапочна!\n&7Реши задачата, за да спечелиш награда!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    end: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&c&l✦ &b&lMATH EVENT &cприключи!\n&7Времето изтече!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    correct: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&a&l✦ &6%player% &aотговори правилно!\n&7Поздравления за спечелването!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    question: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&e&lВъпрос: &fКолко е &6%a% + %b%&f?\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+
+  rewards:
+    - "eco give %player% 50"
+    - "give %player% gold_ingot 2"
+
+# &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯&8[ &6&lQUIZ EVENT &8]&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯
+quiz_event:
+  enabled: true
+  interval-seconds: 3600
+  duration-seconds: 30
+
+  broadcast:
+    start: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&a&l✦ &6&lQUIZ EVENT &aзапочна!\n&7Отговори на въпроса, за да спечелиш!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    end: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&c&l✦ &6&lQUIZ EVENT &cприключи!\n&7Никой не успя да отговори!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    correct: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&a&l✦ &6%player% &aотговори правилно!\n&7Поздравления за спечелването!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    question: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&e&lВъпрос: &f%question%\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    countdown: "&7Остават &e%seconds%s &7до края на Quiz Event!"
+
+  rewards:
+    - "eco give %player% 75"
+    - "give %player% emerald 1"
+
+  questions:
+    - question: "Кой е създателят на Minecraft?"
+      answer: "Notch"
+    - question: "Кой материал се добива от Creeper?"
+      answer: "Gunpowder"
+    - question: "Колко е 10 + 15?"
+      answer: "25"
+
+# &8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯&8[ &e&lTREASURE HUNT &8]&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯
+treasure_event:
+  enabled: true
+  world: "world"
+  radius: 7500
+  interval-seconds: 3600
+  duration-seconds: 600
+
+  countdown-hologram:
+    lines:
+      - "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+      - "&e&lTREASURE EVENT"
+      - "&6%time% &7оставащи"
+      - "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+
+  rewards:
+    - "eco give %player% 250"
+    - "crate givekey %player% treasure 1"
+    - "give %player% diamond 3"
+
+  messages:
+    start: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&a&l✦ &e&lTREASURE HUNT &aзапочна!\n&7Намери скрития съкровещен чест!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    coordinates: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&7Координати (приблизително):\n&eX: %x% &8| &eY: %y% &8| &eZ: %z%\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    found: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&a&l✦ &6%player% &aнамери съкровището!\n&7Поздравления за спечелването!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    end: "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯\n&c&l✦ &e&lTREASURE HUNT &cприключи!\n&7Съкровището изчезна!\n&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+    already_active: "&c&l✦ &e&lTREASURE HUNT &cвече е активен!"
+
+  hologram:
+    enabled: true
+    lines:
+      - "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+      - "&6&lСЪКРОВИЩЕ!"
+      - "&eОтвори ме за награда!"
+      - "&7Изчезва след: &c%treasure_time%"
+      - "&8&m⎯⎯⎯⎯⎯⎯⎯⎯⎯"
