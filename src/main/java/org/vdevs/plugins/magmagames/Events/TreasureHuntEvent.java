@@ -109,9 +109,7 @@ public class TreasureHuntEvent implements Listener {
         startCountdownHologram();
     }
 
-    /**
-     * Намира валидна позиция за съкровище в границите на world border
-     */
+
     private Location findValidLocation(World world) {
         int maxAttempts = 10;
 

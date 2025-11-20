@@ -131,7 +131,7 @@ public final class MagmaGames extends JavaPlugin {
                     mathEvent.manualStart();
                 }
 
-                // Стартира Quiz след 60 секунди
+
                 Bukkit.getScheduler().runTaskLater(MagmaGames.this, () -> {
                     if (quizGame != null && !quizGame.isActive() && isEnabled()) {
                         quizGame.startRandomQuestion();
